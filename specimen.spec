@@ -40,7 +40,7 @@ d¼wiêkowych czy te¿ "sampli" w po³±czeniu z sekwencerem MIDI.
 %setup -q
 
 %build
-%{__aclocal}
+%{__aclocal} -I .
 %{__autoconf}
 %{__autoheader}
 %{__automake}
