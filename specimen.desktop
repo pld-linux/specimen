@@ -6,5 +6,5 @@ Comment[pl]=Kontrolowany przez MIDI sampler dźwiękowy
 Exec=specimen
 Terminal=false
 Type=Application
-Categories=Audio;
+Categories=GTK;GNOME;Audio;
 # vi: encoding=utf-8
