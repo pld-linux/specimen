@@ -1,0 +1,11 @@
+--- specimen-0.4.5/src/gui/audio-settings.c~	2004-11-05 07:43:34.000000000 +0100
++++ specimen-0.4.5/src/gui/audio-settings.c	2004-11-05 07:43:34.000000000 +0100
+@@ -55,7 +55,7 @@
+ 
+ void audio_settings_init (GtkWidget* parent)
+ {
+-     int i;
++     long int i;
+      GSList *driver_list = NULL;
+ 
+      debug ("Initializing audio settings window\n");
