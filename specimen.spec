@@ -13,7 +13,7 @@ Source0:	http://www.gazuga.net/%{name}-%{version}.tar.gz
 # Source0-md5:	86faf7a9c6a62e079e47107be9529f7c
 Source1:	%{name}.desktop
 URL:		http://www.gazuga.net/
-%{?with_ladcca:BuildRequires:	ladcca >= 0.4.0}
+%{?with_ladcca:BuildRequires:	ladcca-devel >= 0.4.0}
 BuildRequires:	alsa-lib-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
