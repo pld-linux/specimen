@@ -27,7 +27,7 @@ tandem with a midi sequencer.
 %description -l pl
 Specimen jest kontrolowanym z poziomu MIDI samplerem d¼wiêkowym dla
 sytemów GNU/Linux. Pozwala na tworzenie muzyki z przeró¿nych plików
-d¼wiêkowych czy te¿ "próbek", w po³±czeniu z sekwencerem MIDI.
+d¼wiêkowych czy te¿ "próbek" w po³±czeniu z sekwencerem MIDI.
 
 %prep
 %setup -q
