@@ -42,6 +42,7 @@ d¼wiêkowych czy te¿ "sampli" w po³±czeniu z sekwencerem MIDI.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %{__perl} -pi -e 's/CFLAGS="-O3"/:/' configure.ac
 
