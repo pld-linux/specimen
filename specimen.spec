@@ -24,6 +24,7 @@ BuildRequires:	libgnomecanvas-devel >= 2.0
 BuildRequires:	libsamplerate-devel
 BuildRequires:	libsndfile-devel
 BuildRequires:	libxml2-devel >= 2.0
+BuildRequires:	perl-base
 BuildRequires:	phat-devel >= 0.2.2
 BuildRequires:	pkgconfig
 Requires:	gtk+2 >= 2:2.4
