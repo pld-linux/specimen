@@ -1,6 +1,6 @@
 #
 # Conditional build
-%bcond_with ladcca	# build with LADCCA support
+%bcond_with	ladcca	# build with LADCCA support
 #
 Summary:	MIDI controlled audio sampler
 Summary(pl):	Kontrolowany przez MIDI sampler d¼wiêkowy
@@ -13,17 +13,19 @@ Source0:	http://www.gazuga.net/files/%{name}-%{version}.tar.gz
 # Source0-md5:	b3bc430563b794e18a297d5ee9442aef
 Source1:	%{name}.desktop
 URL:		http://www.gazuga.net/
-%{?with_ladcca:BuildRequires:	ladcca-devel >= 0.4.0}
 BuildRequires:	alsa-lib-devel
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
-BuildRequires:	gtk+2-devel >= 2.4
-BuildRequires:	jack-audio-connection-kit-devel
-BuildRequires:	libgnomecanvas-devel
+BuildRequires:	gtk+2-devel >= 2:2.4
+BuildRequires:	jack-audio-connection-kit-devel >= 0.90.0
+%{?with_ladcca:BuildRequires:	ladcca-devel >= 0.4.0}
+BuildRequires:	libgnomecanvas-devel >= 2.0
 BuildRequires:	libsamplerate-devel
 BuildRequires:	libsndfile-devel
-BuildRequires:	libxml2-devel
+BuildRequires:	libxml2-devel >= 2.0
 BuildRequires:	pkgconfig
+Requires:	gtk+2 >= 2:2.4
+Requires:	jack-audio-connection-kit >= 0.90.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -38,6 +40,8 @@ d¼wiêkowych czy te¿ "sampli" w po³±czeniu z sekwencerem MIDI.
 
 %prep
 %setup -q
+
+%{__perl} -pi -e 's/CFLAGS="-O3"/:/' configure.ac
 
 %build
 %{__aclocal} -I .
