@@ -1,21 +1,28 @@
+#
+# Conditional build
+%bcond_with ladcca	# build with LADCCA support
+#
 Summary:	MIDI controlled audio sampler
 Summary(pl):	Kontrolowany przez MIDI sampler d¼wiêkowy
 Name:		specimen
-Version:	0.2.4
+Version:	0.2.9
 Release:	1
 License:	GPL v2
 Group:		X11/Applications/Sound
 Source0:	http://www.gazuga.net/%{name}-%{version}.tar.gz
-# Source0-md5:	c7824aecb388f1cfa3905b7c348db57f
+# Source0-md5:	86faf7a9c6a62e079e47107be9529f7c
 Source1:	%{name}.desktop
 URL:		http://www.gazuga.net/
+%{?with_ladcca:BuildRequires:	ladcca >= 0.4.0}
 BuildRequires:	alsa-lib-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gtk+2-devel
+BuildRequires:	gtk+2-devel >= 2.4
 BuildRequires:	jack-audio-connection-kit-devel
+BuildRequires:	libgnomecanvas-devel
 BuildRequires:	libsamplerate-devel
 BuildRequires:	libsndfile-devel
+BuildRequires:	libxml2-devel
 BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -27,7 +34,7 @@ tandem with a midi sequencer.
 %description -l pl
 Specimen jest kontrolowanym z poziomu MIDI samplerem d¼wiêkowym dla
 sytemów GNU/Linux. Pozwala na tworzenie muzyki z przeró¿nych plików
-d¼wiêkowych czy te¿ "próbek" w po³±czeniu z sekwencerem MIDI.
+d¼wiêkowych czy te¿ "sampli" w po³±czeniu z sekwencerem MIDI.
 
 %prep
 %setup -q
@@ -37,7 +44,9 @@ d¼wiêkowych czy te¿ "próbek" w po³±czeniu z sekwencerem MIDI.
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-%configure
+%configure \
+	--enable-ladcca=%{?with_ladcca:yes}%{!?with_ladcca:no}
+	
 %{__make}
 
 %install
@@ -46,8 +55,9 @@ install -d $RPM_BUILD_ROOT%{_desktopdir}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-
+	
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
