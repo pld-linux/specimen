@@ -5,12 +5,12 @@
 Summary:	MIDI controlled audio sampler
 Summary(pl):	Kontrolowany przez MIDI sampler d¼wiêkowy
 Name:		specimen
-Version:	0.4.0
+Version:	0.4.2
 Release:	1
 License:	GPL v2
 Group:		X11/Applications/Sound
 Source0:	http://www.gazuga.net/files/%{name}-%{version}.tar.gz
-# Source0-md5:	b3bc430563b794e18a297d5ee9442aef
+# Source0-md5:	7432795971a2c99603f24ab855d61ae2
 Source1:	%{name}.desktop
 URL:		http://www.gazuga.net/
 BuildRequires:	alsa-lib-devel
