@@ -5,12 +5,12 @@
 Summary:	MIDI controlled audio sampler
 Summary(pl):	Kontrolowany przez MIDI sampler d¼wiêkowy
 Name:		specimen
-Version:	0.5.0
+Version:	0.5.1
 Release:	1
 License:	GPL v2
 Group:		X11/Applications/Sound
 Source0:	http://www.gazuga.net/files/%{name}-%{version}.tar.gz
-# Source0-md5:	109f1b2ddeffd7f477a8a02c0f497665
+# Source0-md5:	278f1f66add761feb1fa16cf0502f70f
 Source1:	%{name}.desktop
 Patch0:		%{name}-64bit.patch
 URL:		http://www.gazuga.net/
@@ -45,9 +45,15 @@ d¼wiêkowych czy te¿ "sampli" w po³±czeniu z sekwencerem MIDI.
 %setup -q
 %patch0 -p1
 
+# workaround for variables names
+echo 'm4_pattern_allow(PKG_CFLAGS)' > acinclude.m4
+echo 'm4_pattern_allow(PKG_LIBS)\n' >> acinclude.m4
+echo 'm4_pattern_allow(PKG_PKG_ERRORS)\' >> acinclude.m4
+
 %{__perl} -pi -e 's/CFLAGS="-O3"/:/' configure.ac
 
 %build
+%{__libtoolize}
 %{__aclocal} -I .
 %{__autoconf}
 %{__autoheader}
