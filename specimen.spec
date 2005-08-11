@@ -23,6 +23,7 @@ BuildRequires:	jack-audio-connection-kit-devel >= 0.90.0
 BuildRequires:	libgnomecanvas-devel >= 2.0
 BuildRequires:	libsamplerate-devel
 BuildRequires:	libsndfile-devel
+BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 2.0
 BuildRequires:	perl-base
 BuildRequires:	phat-devel >= 0.2.2
@@ -47,8 +48,8 @@ d¼wiêkowych czy te¿ "sampli" w po³±czeniu z sekwencerem MIDI.
 
 # workaround for variables names
 echo 'm4_pattern_allow(PKG_CFLAGS)' > acinclude.m4
-echo 'm4_pattern_allow(PKG_LIBS)\n' >> acinclude.m4
-echo 'm4_pattern_allow(PKG_PKG_ERRORS)\' >> acinclude.m4
+echo 'm4_pattern_allow(PKG_LIBS)' >> acinclude.m4
+echo 'm4_pattern_allow(PKG_PKG_ERRORS)' >> acinclude.m4
 
 %{__perl} -pi -e 's/CFLAGS="-O3"/:/' configure.ac
 
