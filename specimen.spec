@@ -61,7 +61,7 @@ echo 'm4_pattern_allow(PKG_PKG_ERRORS)' >> acinclude.m4
 %{__automake}
 %configure \
 	--enable-ladcca=%{?with_ladcca:yes}%{!?with_ladcca:no}
-	
+
 %{__make}
 
 %install
@@ -70,7 +70,7 @@ install -d $RPM_BUILD_ROOT%{_desktopdir}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-	
+
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 
 %clean
