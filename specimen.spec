@@ -3,7 +3,7 @@
 %bcond_with	ladcca	# build with LADCCA support
 #
 Summary:	MIDI controlled audio sampler
-Summary(pl):	Kontrolowany przez MIDI sampler d¼wiêkowy
+Summary(pl.UTF-8):   Kontrolowany przez MIDI sampler dÅºwiÄ™kowy
 Name:		specimen
 Version:	0.5.1
 Release:	1
@@ -37,10 +37,10 @@ Specimen is a MIDI controlled audio sampler for GNU/Linux systems. It
 allows to create music using various sound files, or "samples", in
 tandem with a midi sequencer.
 
-%description -l pl
-Specimen jest kontrolowanym z poziomu MIDI samplerem d¼wiêkowym dla
-systemów GNU/Linux. Pozwala na tworzenie muzyki z przeró¿nych plików
-d¼wiêkowych czy te¿ "sampli" w po³±czeniu z sekwencerem MIDI.
+%description -l pl.UTF-8
+Specimen jest kontrolowanym z poziomu MIDI samplerem dÅºwiÄ™kowym dla
+systemÃ³w GNU/Linux. Pozwala na tworzenie muzyki z przerÃ³Å¼nych plikÃ³w
+dÅºwiÄ™kowych czy teÅ¼ "sampli" w poÅ‚Ä…czeniu z sekwencerem MIDI.
 
 %prep
 %setup -q
