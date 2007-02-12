@@ -3,7 +3,7 @@
 %bcond_with	ladcca	# build with LADCCA support
 #
 Summary:	MIDI controlled audio sampler
-Summary(pl.UTF-8):   Kontrolowany przez MIDI sampler dźwiękowy
+Summary(pl.UTF-8):	Kontrolowany przez MIDI sampler dźwiękowy
 Name:		specimen
 Version:	0.5.1
 Release:	1
